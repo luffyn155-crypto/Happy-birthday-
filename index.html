@@ -1,4 +1,4 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -141,37 +141,39 @@ DOCTYPE html>
     max-width:380px;
     aspect-ratio:4/5;
     margin:0 auto;
-    border:3px dashed var(--gold);
-    border-radius:16px;
-    background:repeating-linear-gradient(135deg, rgba(212,167,44,0.06) 0 12px, rgba(212,167,44,0.12) 12px 24px);
+    border:10px solid #fff;
+    border-bottom-width:46px;
+    border-radius:4px;
+    background:#eee;
+    box-shadow:0 16px 34px -16px rgba(42,30,26,0.4), 0 0 0 1px rgba(139,30,63,0.08);
     display:flex;
     align-items:center;
     justify-content:center;
-    cursor:pointer;
-    transition:transform 0.25s ease, border-color 0.25s ease;
-    overflow:hidden;
+    overflow:visible;
+    transform:rotate(-2deg);
   }
-  .frame:hover{transform:translateY(-4px) rotate(-0.4deg); border-color:var(--marigold);}
   .frame img{
     width:100%; height:100%; object-fit:cover; display:block;
   }
-  .frame .placeholder{
+  .frame .caption{
+    position:absolute;
+    bottom:-34px; left:0; right:0;
     text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
     color:var(--maroon);
-    padding:20px;
+    letter-spacing:0.02em;
   }
-  .frame .placeholder .icon{font-size:2.4rem; display:block; margin-bottom:10px;}
   .pin{
     position:absolute;
     top:-14px; left:50%;
-    transform:translateX(-50%);
-    width:26px; height:26px;
-    border-radius:50%;
-    background:var(--maroon);
-    box-shadow:0 3px 6px rgba(0,0,0,0.25);
+    transform:translateX(-50%) rotate(3deg);
+    width:52px; height:20px;
+    background:rgba(212,167,44,0.55);
+    border:1px solid rgba(212,167,44,0.8);
+    box-shadow:0 3px 6px rgba(0,0,0,0.15);
     z-index:2;
   }
-  input[type=file]{display:none;}
 
   /* ---------- Trek checklist ---------- */
   .trek h2{color:var(--maroon); font-size:1.6rem; margin-bottom:6px;}
@@ -317,9 +319,9 @@ DOCTYPE html>
 </div>
 
 <div class="hero">
-  <p class="eyebrow">Aaja special din ho — today is a special day</p>
+  <p class="eyebrow">Warning: mild sentimentality ahead (mostly jokes though)</p>
   <h1>Happy Birthday,<br>Mamata Didi! 🎂</h1>
-  <p class="sub">Timro janmadin ko dherai dherai shubhakamana — lots and lots of birthday wishes for you.</p>
+  <p class="sub">Timro janmadin ko shubhakamana — congratulations on surviving another year of my nonsense.</p>
 
   <svg class="mountains" viewBox="0 0 1200 260" preserveAspectRatio="none">
     <polygon points="0,260 0,150 180,40 340,160 480,70 620,180 760,50 900,170 1040,90 1200,150 1200,260" fill="#1B4B66" opacity="0.18"/>
@@ -332,77 +334,73 @@ DOCTYPE html>
 <section class="wish">
   <div class="card">
     <span class="label-tag">Birthday Message</span>
-    <h2>Timilai ke bhannu, didi... 💌</h2>
-    <p>Malai thaha cha ma timilai yesपटक kunai gift dina sakina — <em>I know I couldn't get you a real gift this time.</em> Tara maile timro lagi yo sano website banaye, ekdam special ra ekdam free-of-cost. Code ley pani maya janauna sakcha ni, hoina? <em>I hope code can say "I love you" too.</em></p>
-    <p>Timi jasto didi paunu nai euta gift ho malai — <em>having a sister like you is already a gift for me.</em> Hajarौं khusi, ramailo, ra masu-bhat bharpur bhaos timro yo naya barsa. <em>May your new year be full of joy, fun, and good food.</em></p>
-    <p>Happy birthday didi, dherai maya cha timilai! 🎉</p>
+    <h2>Timilai ke bhannu, didi... 😏</h2>
+    <p>Malai thaha cha ma timilai yesपटक kunai gift dina sakina — <em>shocking, I know.</em> Tara worry नगर्नु, maile timro lagi yo entire website banaye, jasले clearly gift bhanda dherai effort maganchha. <em>This took way longer than just buying you a candle, so technically I win.</em></p>
+    <p>Timi jasto didi paunu ta euta "gift" nai ho technically — <em>you came free with the family, no receipt, no returns policy.</em> Tara yesपटक chai cake bhanda badhi timro fitness lai attention dinu parcha, kina bhane... <em>keep scrolling, didi, there's a plan for you.</em></p>
+    <p>Happy birthday didi — dherai maya cha (ra dherai jokes cha, sorry not sorry). 🎉</p>
   </div>
 </section>
 
 <section class="photo-wrap">
-  <h2>Yeta euta thau khali rakheko chu 📸</h2>
-  <p class="hint">This spot is reserved for your photo — click below to upload it</p>
-  <label class="frame" for="photoInput" id="frameLabel">
+  <h2>Yeta euta VIP photo cha 📸</h2>
+  <p class="hint">The official, non-negotiable photo of today's main character</p>
+  <div class="frame">
     <span class="pin"></span>
-    <span class="placeholder" id="placeholderText">
-      <span class="icon">🖼️</span>
-      Click garera photo upload garnus<br>
-      <small>(click to upload a picture of you)</small>
-    </span>
-  </label>
-  <input type="file" id="photoInput" accept="image/*">
+    <img src="mamata.jpg" alt="Mamata Didi looking unfairly photogenic">
+    <span class="caption">not photoshopped. probably.</span>
+  </div>
 </section>
 
 <section class="trek">
   <div class="card">
-    <h2>Trek ko lagi promise garnus 🏔️</h2>
-    <p class="hint">Hamile chai sangai trek jane plan cha — so tick these off, didi!</p>
+    <h2>Fitness contract, sign here 🏔️</h2>
+    <p class="hint">Yo legal document ho technically (not really, but let's pretend, didi)</p>
     <ul class="checklist">
       <li>
         <input type="checkbox" id="c1">
-        <label for="c1">Daily walk or jogging garne
-          <span class="np">Daily hidne ra jogging garne promise</span>
+        <label for="c1">Daily walk garne, momo lai chase gareko jasto energy le
+          <span class="np">(walk daily — like you're chasing down a plate of momo)</span>
         </label>
       </li>
       <li>
         <input type="checkbox" id="c2">
-        <label for="c2">Stretching / light exercise every morning
-          <span class="np">Bihana halka exercise ra stretching</span>
+        <label for="c2">Bihana snooze button lai ignore garne
+          <span class="np">(morning exercise, actually get up this time)</span>
         </label>
       </li>
       <li>
         <input type="checkbox" id="c3">
-        <label for="c3">Stairs use garne, lift try navaneko
-          <span class="np">(taking the stairs instead of the lift)</span>
+        <label for="c3">Lift dekhda "no thanks", stairs dekhda "yes please"
+          <span class="np">(take the stairs, betray the elevator)</span>
         </label>
       </li>
       <li>
         <input type="checkbox" id="c4">
-        <label for="c4">Good sleep ra paani dherai khane
-          <span class="np">(sleep well, drink plenty of water)</span>
+        <label for="c4">Cake bahek pani kehi khane, paani pani khane
+          <span class="np">(eat something other than cake, occasionally, drink water)</span>
         </label>
       </li>
       <li>
         <input type="checkbox" id="c5">
-        <label for="c5">Fit bhayera trek ko din confirm garne
-          <span class="np">(get fit and lock in a trek date with me!)</span>
+        <label for="c5">Trek ko date confirm garne, excuse na khoji
+          <span class="np">(actually commit to a trek date, no excuses)</span>
         </label>
       </li>
     </ul>
-    <p class="trail-note">🥾 Fit bhayera aaunu didi — pahad chadna sajilo huncha, ani view ni ramro dekhincha!</p>
+    <p class="trail-note">🥾 Fit bhayo bhane trek jane, natra hami dubai jana Google Images ma pahad herera baseko huncha.</p>
   </div>
 </section>
 
 <section class="party">
   <h2>Ma lai party pugena hai 🎈</h2>
-  <p class="hint">Yeti le pugdaina — tap the button and promise me more parties</p>
+  <p class="hint">Yeti le pugdaina, didi — tap the button, I'm as persistent as you</p>
   <div class="gauge">
     <span class="peak-label">party altitude</span>
     <div class="fill" id="gaugeFill"></div>
   </div>
   <div class="party-controls">
-    <p class="party-count">Parties promised so far: <strong id="partyCount">1</strong></p>
-    <button class="ask" id="askBtn">Ma lai party chaiyo! 🎁</button>
+    <p class="party-count">Parties legally owed to me: <strong id="partyCount">1</strong></p>
+    <button class="ask" id="askBtn">Aru party de na! 🎁</button>
     <p class="party-msg" id="partyMsg"></p>
   </div>
 </section>
@@ -415,27 +413,11 @@ DOCTYPE html>
     <div class="flag" style="--c:var(--marigold)"></div>
     <div class="flag" style="--c:var(--maroon)"></div>
   </div>
-  <p class="sign">Dherai dherai maya, timro bhai/bahini bata 💛</p>
+  <p class="sign">Dherai maya (ra dherai demands), timro bhai/bahini bata 💛</p>
   <p class="edit-note">edit this line in index.html to sign with your name</p>
 </footer>
 
 <script>
-  // Photo upload preview
-  const photoInput = document.getElementById('photoInput');
-  const frameLabel = document.getElementById('frameLabel');
-  const placeholderText = document.getElementById('placeholderText');
-
-  photoInput.addEventListener('change', () => {
-    const file = photoInput.files[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    placeholderText.remove();
-    const img = document.createElement('img');
-    img.src = url;
-    img.alt = "Mamata's photo";
-    frameLabel.appendChild(img);
-  });
-
   // Party meter
   const askBtn = document.getElementById('askBtn');
   const partyCount = document.getElementById('partyCount');
@@ -444,14 +426,14 @@ DOCTYPE html>
   let count = 1;
 
   const messages = [
-    "Ekdum ramro! One more coming up.",
-    "Hajur, noted! Adding to the list.",
-    "Okay okay, party number confirmed!",
-    "Didi, timi ta party queen ho!",
-    "Ma sab time free chu, jaha bhaye pani ready!",
-    "Altitude climbing fast — just like our trek plan!",
-    "This is getting expensive... but okay, deal!",
-    "Party unlimited mode activated 🎉"
+    "Noted. Adding it to the (very long) list.",
+    "Wow, generous. Suspicious, but generous.",
+    "This now counts as a verbal contract.",
+    "Ma witness chu — timi le boleko, no take-backs.",
+    "Altitude rising, just like your gift-giving guilt.",
+    "Okay this is basically a subscription now.",
+    "Cancel garna milcha? No. No refunds, didi.",
+    "Party unlimited mode: officially your problem now 🎉"
   ];
 
   function updateGauge(){
