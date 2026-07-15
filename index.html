@@ -1,0 +1,473 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mamata Didi 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF3E7;
+    --maroon:#8B1E3F;
+    --marigold:#E8871E;
+    --gold:#D4A72C;
+    --blue:#1B4B66;
+    --forest:#2F5233;
+    --ink:#2A1E1A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  h1,h2,h3{font-family:'Fraunces', serif;}
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--maroon);
+    font-weight:600;
+  }
+
+  /* ---------- Prayer flag divider ---------- */
+  .flags{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    padding:14px 10px 0;
+    flex-wrap:wrap;
+  }
+  .flag{
+    width:0; height:0;
+    border-left:15px solid transparent;
+    border-right:15px solid transparent;
+    border-top:20px solid var(--c);
+    opacity:0.9;
+    animation:sway 3.2s ease-in-out infinite;
+  }
+  .flag:nth-child(odd){animation-delay:0.3s;}
+  @keyframes sway{
+    0%,100%{transform:rotate(-4deg);}
+    50%{transform:rotate(4deg);}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:40px 20px 120px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 6vw, 3.6rem);
+    font-weight:700;
+    color:var(--maroon);
+    margin:14px 0 10px;
+    line-height:1.15;
+  }
+  .hero .sub{
+    max-width:560px;
+    margin:0 auto;
+    font-size:1.05rem;
+    color:var(--blue);
+    font-weight:500;
+  }
+  .mountains{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  section{
+    max-width:720px;
+    margin:0 auto;
+    padding:50px 24px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid rgba(139,30,63,0.12);
+    border-radius:18px;
+    padding:34px 30px;
+    box-shadow:0 12px 30px -18px rgba(42,30,26,0.3);
+  }
+  .label-tag{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    background:var(--forest);
+    color:#fff;
+    padding:4px 10px;
+    border-radius:5px;
+    margin-bottom:16px;
+  }
+  .wish h2{
+    color:var(--maroon);
+    font-size:1.7rem;
+    margin-bottom:16px;
+  }
+  .wish p{
+    margin-bottom:14px;
+    font-size:1.03rem;
+  }
+  .wish em{
+    color:var(--forest);
+    font-style:normal;
+    font-weight:600;
+  }
+
+  /* ---------- Photo upload ---------- */
+  .photo-wrap{text-align:center;}
+  .photo-wrap h2{color:var(--maroon); font-size:1.6rem; margin-bottom:6px;}
+  .photo-wrap .hint{color:var(--blue); font-weight:500; margin-bottom:22px;}
+  .frame{
+    position:relative;
+    width:100%;
+    max-width:380px;
+    aspect-ratio:4/5;
+    margin:0 auto;
+    border:3px dashed var(--gold);
+    border-radius:16px;
+    background:repeating-linear-gradient(135deg, rgba(212,167,44,0.06) 0 12px, rgba(212,167,44,0.12) 12px 24px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:transform 0.25s ease, border-color 0.25s ease;
+    overflow:hidden;
+  }
+  .frame:hover{transform:translateY(-4px) rotate(-0.4deg); border-color:var(--marigold);}
+  .frame img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .frame .placeholder{
+    text-align:center;
+    color:var(--maroon);
+    padding:20px;
+  }
+  .frame .placeholder .icon{font-size:2.4rem; display:block; margin-bottom:10px;}
+  .pin{
+    position:absolute;
+    top:-14px; left:50%;
+    transform:translateX(-50%);
+    width:26px; height:26px;
+    border-radius:50%;
+    background:var(--maroon);
+    box-shadow:0 3px 6px rgba(0,0,0,0.25);
+    z-index:2;
+  }
+  input[type=file]{display:none;}
+
+  /* ---------- Trek checklist ---------- */
+  .trek h2{color:var(--maroon); font-size:1.6rem; margin-bottom:6px;}
+  .trek .hint{color:var(--blue); font-weight:500; margin-bottom:20px;}
+  .checklist{list-style:none;}
+  .checklist li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid rgba(139,30,63,0.1);
+    font-size:1.02rem;
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist input[type=checkbox]{
+    appearance:none;
+    width:22px; height:22px;
+    min-width:22px;
+    border:2px solid var(--forest);
+    border-radius:6px;
+    cursor:pointer;
+    position:relative;
+    transition:background 0.2s ease;
+  }
+  .checklist input[type=checkbox]:checked{background:var(--forest);}
+  .checklist input[type=checkbox]:checked::after{
+    content:'✓';
+    color:#fff;
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:700;
+  }
+  .checklist label{cursor:pointer; flex:1;}
+  .checklist .np{display:block; font-size:0.86rem; color:var(--blue); font-weight:500;}
+  .trail-note{
+    margin-top:18px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.85rem;
+    color:var(--forest);
+    background:rgba(47,82,51,0.08);
+    border-radius:10px;
+    padding:12px 14px;
+  }
+
+  /* ---------- Party meter ---------- */
+  .party h2{color:var(--maroon); font-size:1.6rem; margin-bottom:6px; text-align:center;}
+  .party .hint{color:var(--blue); font-weight:500; margin-bottom:26px; text-align:center;}
+  .gauge{
+    position:relative;
+    width:100%;
+    height:170px;
+    background:linear-gradient(to top, #DDEAF2 0%, #F3F8FB 100%);
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid rgba(27,75,102,0.15);
+  }
+  .gauge .fill{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:8%;
+    background:linear-gradient(to top, var(--forest), #4f7d52);
+    transition:height 0.5s cubic-bezier(.2,.8,.2,1);
+    clip-path:polygon(0 100%, 8% 55%, 20% 75%, 35% 30%, 50% 60%, 65% 15%, 80% 50%, 92% 35%, 100% 100%);
+  }
+  .gauge .peak-label{
+    position:absolute;
+    top:10px; left:14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.75rem;
+    color:var(--blue);
+    background:rgba(255,255,255,0.75);
+    padding:3px 8px;
+    border-radius:6px;
+  }
+  .party-controls{
+    text-align:center;
+    margin-top:22px;
+  }
+  .party-count{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.95rem;
+    color:var(--maroon);
+    margin-bottom:14px;
+  }
+  .party-count strong{font-size:1.3rem;}
+  button.ask{
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:1rem;
+    padding:13px 26px;
+    border:none;
+    border-radius:30px;
+    background:var(--marigold);
+    color:#fff;
+    cursor:pointer;
+    box-shadow:0 8px 18px -8px rgba(232,135,30,0.6);
+    transition:transform 0.15s ease, background 0.2s ease;
+  }
+  button.ask:hover{background:var(--maroon);}
+  button.ask:active{transform:scale(0.96);}
+  .party-msg{
+    margin-top:14px;
+    min-height:24px;
+    color:var(--forest);
+    font-weight:600;
+  }
+
+  footer{
+    text-align:center;
+    padding:50px 24px 60px;
+    color:var(--blue);
+  }
+  footer .flags{padding-bottom:16px;}
+  footer .sign{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--maroon);
+  }
+  footer .edit-note{
+    margin-top:10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    color:#8a8177;
+  }
+</style>
+</head>
+<body>
+
+<div class="flags" aria-hidden="true">
+  <div class="flag" style="--c:var(--maroon)"></div>
+  <div class="flag" style="--c:var(--marigold)"></div>
+  <div class="flag" style="--c:var(--gold)"></div>
+  <div class="flag" style="--c:var(--blue)"></div>
+  <div class="flag" style="--c:var(--forest)"></div>
+  <div class="flag" style="--c:var(--maroon)"></div>
+  <div class="flag" style="--c:var(--marigold)"></div>
+  <div class="flag" style="--c:var(--gold)"></div>
+</div>
+
+<div class="hero">
+  <p class="eyebrow">Aaja special din ho — today is a special day</p>
+  <h1>Happy Birthday,<br>Mamata Didi! 🎂</h1>
+  <p class="sub">Timro janmadin ko dherai dherai shubhakamana — lots and lots of birthday wishes for you.</p>
+
+  <svg class="mountains" viewBox="0 0 1200 260" preserveAspectRatio="none">
+    <polygon points="0,260 0,150 180,40 340,160 480,70 620,180 760,50 900,170 1040,90 1200,150 1200,260" fill="#1B4B66" opacity="0.18"/>
+    <polygon points="0,260 0,190 220,90 420,200 600,110 800,210 980,120 1200,200 1200,260" fill="#2F5233" opacity="0.28"/>
+    <polygon points="150,90 190,40 230,90" fill="#fff" opacity="0.6"/>
+    <polygon points="740,100 780,50 820,100" fill="#fff" opacity="0.6"/>
+  </svg>
+</div>
+
+<section class="wish">
+  <div class="card">
+    <span class="label-tag">Birthday Message</span>
+    <h2>Timilai ke bhannu, didi... 💌</h2>
+    <p>Malai thaha cha ma timilai yesपटक kunai gift dina sakina — <em>I know I couldn't get you a real gift this time.</em> Tara maile timro lagi yo sano website banaye, ekdam special ra ekdam free-of-cost. Code ley pani maya janauna sakcha ni, hoina? <em>I hope code can say "I love you" too.</em></p>
+    <p>Timi jasto didi paunu nai euta gift ho malai — <em>having a sister like you is already a gift for me.</em> Hajarौं khusi, ramailo, ra masu-bhat bharpur bhaos timro yo naya barsa. <em>May your new year be full of joy, fun, and good food.</em></p>
+    <p>Happy birthday didi, dherai maya cha timilai! 🎉</p>
+  </div>
+</section>
+
+<section class="photo-wrap">
+  <h2>Yeta euta thau khali rakheko chu 📸</h2>
+  <p class="hint">This spot is reserved for your photo — click below to upload it</p>
+  <label class="frame" for="photoInput" id="frameLabel">
+    <span class="pin"></span>
+    <span class="placeholder" id="placeholderText">
+      <span class="icon">🖼️</span>
+      Click garera photo upload garnus<br>
+      <small>(click to upload a picture of you)</small>
+    </span>
+  </label>
+  <input type="file" id="photoInput" accept="image/*">
+</section>
+
+<section class="trek">
+  <div class="card">
+    <h2>Trek ko lagi promise garnus 🏔️</h2>
+    <p class="hint">Hamile chai sangai trek jane plan cha — so tick these off, didi!</p>
+    <ul class="checklist">
+      <li>
+        <input type="checkbox" id="c1">
+        <label for="c1">Daily walk or jogging garne
+          <span class="np">Daily hidne ra jogging garne promise</span>
+        </label>
+      </li>
+      <li>
+        <input type="checkbox" id="c2">
+        <label for="c2">Stretching / light exercise every morning
+          <span class="np">Bihana halka exercise ra stretching</span>
+        </label>
+      </li>
+      <li>
+        <input type="checkbox" id="c3">
+        <label for="c3">Stairs use garne, lift try navaneko
+          <span class="np">(taking the stairs instead of the lift)</span>
+        </label>
+      </li>
+      <li>
+        <input type="checkbox" id="c4">
+        <label for="c4">Good sleep ra paani dherai khane
+          <span class="np">(sleep well, drink plenty of water)</span>
+        </label>
+      </li>
+      <li>
+        <input type="checkbox" id="c5">
+        <label for="c5">Fit bhayera trek ko din confirm garne
+          <span class="np">(get fit and lock in a trek date with me!)</span>
+        </label>
+      </li>
+    </ul>
+    <p class="trail-note">🥾 Fit bhayera aaunu didi — pahad chadna sajilo huncha, ani view ni ramro dekhincha!</p>
+  </div>
+</section>
+
+<section class="party">
+  <h2>Ma lai party pugena hai 🎈</h2>
+  <p class="hint">Yeti le pugdaina — tap the button and promise me more parties</p>
+  <div class="gauge">
+    <span class="peak-label">party altitude</span>
+    <div class="fill" id="gaugeFill"></div>
+  </div>
+  <div class="party-controls">
+    <p class="party-count">Parties promised so far: <strong id="partyCount">1</strong></p>
+    <button class="ask" id="askBtn">Ma lai party chaiyo! 🎁</button>
+    <p class="party-msg" id="partyMsg"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="flags" aria-hidden="true">
+    <div class="flag" style="--c:var(--forest)"></div>
+    <div class="flag" style="--c:var(--blue)"></div>
+    <div class="flag" style="--c:var(--gold)"></div>
+    <div class="flag" style="--c:var(--marigold)"></div>
+    <div class="flag" style="--c:var(--maroon)"></div>
+  </div>
+  <p class="sign">Dherai dherai maya, timro bhai/bahini bata 💛</p>
+  <p class="edit-note">edit this line in index.html to sign with your name</p>
+</footer>
+
+<script>
+  // Photo upload preview
+  const photoInput = document.getElementById('photoInput');
+  const frameLabel = document.getElementById('frameLabel');
+  const placeholderText = document.getElementById('placeholderText');
+
+  photoInput.addEventListener('change', () => {
+    const file = photoInput.files[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    placeholderText.remove();
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = "Mamata's photo";
+    frameLabel.appendChild(img);
+  });
+
+  // Party meter
+  const askBtn = document.getElementById('askBtn');
+  const partyCount = document.getElementById('partyCount');
+  const partyMsg = document.getElementById('partyMsg');
+  const gaugeFill = document.getElementById('gaugeFill');
+  let count = 1;
+
+  const messages = [
+    "Ekdum ramro! One more coming up.",
+    "Hajur, noted! Adding to the list.",
+    "Okay okay, party number confirmed!",
+    "Didi, timi ta party queen ho!",
+    "Ma sab time free chu, jaha bhaye pani ready!",
+    "Altitude climbing fast — just like our trek plan!",
+    "This is getting expensive... but okay, deal!",
+    "Party unlimited mode activated 🎉"
+  ];
+
+  function updateGauge(){
+    const pct = Math.min(8 + count * 11, 100);
+    gaugeFill.style.height = pct + '%';
+  }
+  updateGauge();
+
+  askBtn.addEventListener('click', () => {
+    count++;
+    partyCount.textContent = count;
+    updateGauge();
+    const msg = messages[(count - 2) % messages.length];
+    partyMsg.textContent = msg;
+  });
+</script>
+
+</body>
+</html>
